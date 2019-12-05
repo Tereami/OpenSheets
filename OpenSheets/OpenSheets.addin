@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">    
+    <Name>OpenSheets</Name>
+    <Assembly>
+      OpenSheets.dll
+    </Assembly>
+    <ClientId>fd6ba53b-fbf0-4cf9-b0e9-607fb1b2d551</ClientId>
+    <FullClassName>OpenSheets.App</FullClassName>
+    <VendorId>Weandrevit</VendorId>
+    <VendorDescription>weandrevit.ru</VendorDescription>
+  </AddIn>
+</RevitAddIns>
