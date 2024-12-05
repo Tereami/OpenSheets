@@ -12,14 +12,10 @@
 #endregion
 
 #region Usings
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
+using System.Collections.Generic;
 #endregion
 
 namespace OpenSheets
@@ -32,14 +28,14 @@ namespace OpenSheets
             Document doc = commandData.Application.ActiveUIDocument.Document;
 
             Selection sel = commandData.Application.ActiveUIDocument.Selection;
-            if(sel.GetElementIds().Count< 2)
+            if (sel.GetElementIds().Count < 2)
             {
-                message = "Выберите листы в Диспетчере проекта перед запуском";
+                message = MyStrings.NoSelectedSheets;
                 return Result.Failed;
             }
 
             List<ViewSheet> sheets = new List<ViewSheet>();
-            foreach(ElementId id in sel.GetElementIds())
+            foreach (ElementId id in sel.GetElementIds())
             {
                 ViewSheet vs = doc.GetElement(id) as ViewSheet;
                 if (vs == null) continue;
